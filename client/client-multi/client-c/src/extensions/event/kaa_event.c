@@ -202,7 +202,7 @@ static void destroy_event_listener_request(void *request_p)
 
 static kaa_event_listeners_request_t *create_event_listener_request(kaa_event_manager_t *self, const char *fqns[], size_t fqns_count, const kaa_event_listeners_callback_t *callback)
 {
-    kaa_event_listeners_request_t *result = (kaa_event_listeners_request_t *) KAA_MALLOC(sizeof(kaa_event_listeners_request_t));
+    kaa_event_listeners_request_t *result = (kaa_event_listeners_request_t *) KAA_CALLOC(1, sizeof(kaa_event_listeners_request_t));
     KAA_RETURN_IF_NIL(result, NULL);
 
     result->is_sent = false;
